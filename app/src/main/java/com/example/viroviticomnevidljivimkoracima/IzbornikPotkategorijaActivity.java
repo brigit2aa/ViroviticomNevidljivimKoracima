@@ -4,10 +4,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
-import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,40 +15,36 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class TrazilicaActivity extends AppCompatActivity {
+public class IzbornikPotkategorijaActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
-    MyAdapter myAdapter;
-    ArrayList<Ustanova> list;
-
+    AdapterPotkategorija adapterPotkategorija;
+    ArrayList<Potkategorija> potkategorijaArrayList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trazilica);
+        setContentView(R.layout.activity_izbornik_potkategorija);
 
-        recyclerView = findViewById(R.id.sviObjekti);
-        databaseReference = FirebaseDatabase.getInstance().getReference("ustanova");
+        recyclerView = findViewById(R.id.menu_potkategorija);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("potkategorija");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        myAdapter = new MyAdapter(this, list);
-        recyclerView.setAdapter(myAdapter);
-        //Staggered grid u 2 stupca
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-
+        potkategorijaArrayList = new ArrayList<>();
+        adapterPotkategorija = new AdapterPotkategorija(this, potkategorijaArrayList);
+        recyclerView.setAdapter(adapterPotkategorija);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
 
-                    Ustanova ustanova = dataSnapshot.getValue(Ustanova.class);
-                    list.add(ustanova);
+                    Potkategorija potkategorija = dataSnapshot.getValue(Potkategorija.class);
+                    potkategorijaArrayList.add(potkategorija);
                 }
-                myAdapter.notifyDataSetChanged();
+                adapterPotkategorija.notifyDataSetChanged();
             }
 
             @Override
@@ -60,3 +54,6 @@ public class TrazilicaActivity extends AppCompatActivity {
         });
     }
 }
+//firebase get child of id on click recycle view activity android studio java
+//želim otvoriti kod kategorije potkategoriju
+//https://www.youtube.com/watch?v=9_uLZdS_K_g

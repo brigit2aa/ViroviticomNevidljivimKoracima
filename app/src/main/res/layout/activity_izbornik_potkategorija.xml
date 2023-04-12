@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IzbornikActivity"
-    android:background="@color/white">
+    tools:context=".IzbornikPotkategorijaActivity">
 
     <ImageView
         android:id="@+id/logo2"
@@ -23,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="ODABERI KATEGORIJU"
+        android:text="ODABERI POTKATEGORIJU"
         android:textColor="@color/black"
         android:textSize="23dp"
         app:layout_constraintHorizontal_bias="0.497"
@@ -32,9 +31,9 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/menu"
+        android:id="@+id/menu_potkategorija"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
         android:layout_marginTop="172dp"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -45,13 +44,14 @@
         android:id="@+id/odustaniGumb"
         android:layout_width="345dp"
         android:layout_height="45dp"
-        android:layout_marginTop="660dp"
+        android:layout_marginTop="650dp"
         android:background="@drawable/all_button"
         android:fontFamily=""
         android:outlineSpotShadowColor="@color/blue_green"
-        android:text="ODUSTANI"
+        android:text="IZBORNIK KATEGORIJA"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
