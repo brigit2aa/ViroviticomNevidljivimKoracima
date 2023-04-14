@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,10 +42,12 @@ public class AdapterPotkategorija extends RecyclerView.Adapter<AdapterPotkategor
 
     public static class MyViewHolderPotkategorija extends RecyclerView.ViewHolder {
         TextView nazivPotkategorije;
+
         public MyViewHolderPotkategorija(@NonNull View itemView) {
             super(itemView);
 
             nazivPotkategorije = itemView.findViewById(R.id.nazivPotkategorije);
+
         }
     }
 }

@@ -44,10 +44,9 @@ public class AdapterKategorija extends RecyclerView.Adapter<AdapterKategorija.My
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*Bundle bundle = new Bundle();
-                bundle.putString("idPotkategorije", kategorija.getIdKategorije());*/
+
                 Intent intent = new Intent(context.getApplicationContext(), IzbornikPotkategorijaActivity.class);
-                //intent.putExtra("nazivPotkategorije", bundle);
+                intent.putExtra("idKategorije", kategorija.idKategorije);
                 context.startActivity(intent);
             }
         });
