@@ -2,7 +2,7 @@ package com.example.viroviticomnevidljivimkoracima;
 
 public class Ustanova {
 
-    String adresa, email, naziv, telefon, web;
+    String adresa, email, naziv, telefon, web, idPotkategorije;
 
     public String getAdresa() {
         return adresa;
@@ -22,5 +22,9 @@ public class Ustanova {
 
     public String getWeb() {
         return web;
+    }
+
+    public String getIdPotkategorije() {
+        return idPotkategorije;
     }
 }

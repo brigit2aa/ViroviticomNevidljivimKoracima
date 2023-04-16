@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ViroviticomNevidljivimKoracima">
         <activity
+            android:name=".ObjektiPotkategorijeActivity"
+            android:exported="false" />
+        <activity
             android:name=".IzbornikPotkategorijaActivity"
             android:exported="false" />
         <activity

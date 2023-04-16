@@ -24,7 +24,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.objekti_potkategorije, parent, false);
         return new MyViewHolder(v);
     }
 
@@ -34,6 +34,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         Ustanova ustanova = list.get(position);
         holder.naziv.setText(ustanova.getNaziv());
         holder.adresa.setText(ustanova.getAdresa());
+
+
     }
 
     @Override
@@ -47,8 +49,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            naziv = itemView.findViewById(R.id.imeObjekta);
-            adresa = itemView.findViewById(R.id.adresaObjekta);
+            naziv = itemView.findViewById(R.id.naziv);
+            adresa = itemView.findViewById(R.id.adresa);
         }
     }
 }

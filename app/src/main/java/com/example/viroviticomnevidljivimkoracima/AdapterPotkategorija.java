@@ -1,6 +1,7 @@
 package com.example.viroviticomnevidljivimkoracima;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,16 @@ public class AdapterPotkategorija extends RecyclerView.Adapter<AdapterPotkategor
     public void onBindViewHolder(@NonNull MyViewHolderPotkategorija holder, int position) {
         Potkategorija potkategorija = potkategorijaArrayList.get(position);
         holder.nazivPotkategorije.setText(potkategorija.getNazivPotkategorije());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context.getApplicationContext(), ObjektiPotkategorijeActivity.class);
+                intent.putExtra("idPotkategorije", potkategorija.idPotkategorije);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

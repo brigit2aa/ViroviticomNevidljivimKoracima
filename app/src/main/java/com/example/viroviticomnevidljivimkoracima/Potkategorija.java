@@ -4,6 +4,7 @@ public class Potkategorija {
     String idKategorije;
     String getIdKategorije;
     String nazivPotkategorije;
+    String idPotkategorije;
 
     public String getIdKategorije() {
         return idKategorije;
@@ -15,5 +16,9 @@ public class Potkategorija {
 
     public String getNazivPotkategorije() {
         return nazivPotkategorije;
+    }
+
+    public String getIdPotkategorije() {
+        return idPotkategorije;
     }
 }

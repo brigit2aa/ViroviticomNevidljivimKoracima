@@ -4,10 +4,9 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
-import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,46 +16,50 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class TrazilicaActivity extends AppCompatActivity {
+public class ObjektiPotkategorijeActivity extends AppCompatActivity {
 
-   /* RecyclerView recyclerView;
+    RecyclerView recyclerView;
     DatabaseReference databaseReference;
-    MyAdapter myAdapter;
-    ArrayList<Ustanova> list;*/
+    MyAdapter adapterObjekata;
+    ArrayList<Ustanova> ustanovaArrayList;
+    ArrayList<Ustanova> ustanovaArrayListPom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trazilica);
+        setContentView(R.layout.activity_objekti_potkategorije);
 
-       /* recyclerView = findViewById(R.id.sviObjekti);
-        databaseReference = FirebaseDatabase.getInstance().getReference("ustanova");
+        recyclerView = findViewById(R.id.objekti_potkategorije);
+        String potkategorija = getIntent().getExtras().getSerializable("idPotkategorije").toString();
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("ustanova");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
-        myAdapter = new MyAdapter(this, list);
-        recyclerView.setAdapter(myAdapter);
-        //Staggered grid u 2 stupca
-        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        ustanovaArrayList = new ArrayList<>();
+        ustanovaArrayListPom = new ArrayList<>();
+        adapterObjekata = new MyAdapter(this, ustanovaArrayList);
+        recyclerView.setAdapter(adapterObjekata);
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
-
                     Ustanova ustanova = dataSnapshot.getValue(Ustanova.class);
-                    list.add(ustanova);
+                    ustanovaArrayListPom.add(ustanova);
                 }
-                myAdapter.notifyDataSetChanged();
+                for (Ustanova ust : ustanovaArrayListPom){
+                    if(ust.idPotkategorije.equals(potkategorija)){
+                        ustanovaArrayList.add(ust);
+                    }
+                }
+                adapterObjekata.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });*/
+        });
     }
 }
