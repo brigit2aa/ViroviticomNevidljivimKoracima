@@ -35,4 +35,3 @@ public class PocetniActivity extends AppCompatActivity {
 
     }
 }
-//https://www.youtube.com/watch?v=a1CQPKuGM_A Transparent Status Bar

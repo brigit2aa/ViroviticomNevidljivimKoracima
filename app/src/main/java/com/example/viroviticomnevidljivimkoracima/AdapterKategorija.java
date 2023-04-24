@@ -44,9 +44,13 @@ public class AdapterKategorija extends RecyclerView.Adapter<AdapterKategorija.My
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(context.getApplicationContext(), IzbornikPotkategorijaActivity.class);
-                intent.putExtra("idKategorije", kategorija.idKategorije);
+                Intent intent;
+                if( !kategorija.idKategorije.equals("idTrazilica")){
+                 intent = new Intent(context.getApplicationContext(), IzbornikPotkategorijaActivity.class);
+                intent.putExtra("idKategorije", kategorija.idKategorije);}
+                else{
+                     intent = new Intent(context.getApplicationContext(), TrazilicaActivity.class);
+                }
                 context.startActivity(intent);
             }
         });

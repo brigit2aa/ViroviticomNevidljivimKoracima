@@ -10,31 +10,29 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+public class AdapterTrazilica extends RecyclerView.Adapter<AdapterTrazilica.MyViewHolderTrazilica> {
 
     Context context;
-    ArrayList<Ustanova> list;
+    ArrayList<Ustanova> ustanovaArrayList;
 
-    public MyAdapter(Context context, ArrayList<Ustanova> list) {
+    public AdapterTrazilica(Context context, ArrayList<Ustanova> ustanovaArrayList) {
         this.context = context;
-        this.list = list;
+        this.ustanovaArrayList = ustanovaArrayList;
     }
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.objekti_potkategorije, parent, false);
-        return new MyViewHolder(v);
+    public MyViewHolderTrazilica onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(context).inflate(R.layout.item, parent, false);
+        return new AdapterTrazilica.MyViewHolderTrazilica(v);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull MyViewHolderTrazilica holder, int position) {
 
-        Ustanova ustanova = list.get(position);
+        Ustanova ustanova = ustanovaArrayList.get(position);
         holder.naziv.setText(ustanova.getNaziv());
         holder.adresa.setText(ustanova.getAdresa());
 
@@ -67,13 +65,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return ustanovaArrayList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
-
+    public static class  MyViewHolderTrazilica extends RecyclerView.ViewHolder {
         TextView naziv, adresa;
-        public MyViewHolder(@NonNull View itemView) {
+
+        public MyViewHolderTrazilica(@NonNull View itemView) {
             super(itemView);
 
             naziv = itemView.findViewById(R.id.naziv);

@@ -6,14 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".TrazilicaActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sviObjekti"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="-30dp"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
+    <androidx.appcompat.widget.SearchView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/objekti_potkategorije"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:iconifiedByDefault="false"
+        app:queryHint="Pretraži..." />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/objekti_potkategorije"
+        android:layout_width="wrap_content"
+        android:layout_height="420dp"
+        android:layout_marginTop="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.294" />
+
+    <Button
+        android:id="@+id/kategorijeGumb"
+        android:layout_width="345dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="650dp"
+        android:background="@drawable/all_button"
+        android:fontFamily=""
+        android:outlineSpotShadowColor="@color/blue_green"
+        android:text="IZBORNIK KATEGORIJA"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

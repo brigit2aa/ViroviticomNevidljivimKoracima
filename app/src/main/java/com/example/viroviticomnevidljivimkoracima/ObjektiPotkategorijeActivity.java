@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -23,6 +26,8 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
     MyAdapter adapterObjekata;
     ArrayList<Ustanova> ustanovaArrayList;
     ArrayList<Ustanova> ustanovaArrayListPom;
+    TextView imePotkategorije;
+    private Button kategorijeGumb, nazadeGumb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +36,7 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.objekti_potkategorije);
         String potkategorija = getIntent().getExtras().getSerializable("idPotkategorije").toString();
+        String nazivPotkategorija = getIntent().getExtras().getSerializable("nazivPotkategorije").toString();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("ustanova");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -39,7 +45,7 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
         ustanovaArrayListPom = new ArrayList<>();
         adapterObjekata = new MyAdapter(this, ustanovaArrayList);
         recyclerView.setAdapter(adapterObjekata);
-
+        imePotkategorije = (TextView) findViewById(R.id.nazivPotkategorije);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,10 +53,12 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Ustanova ustanova = dataSnapshot.getValue(Ustanova.class);
                     ustanovaArrayListPom.add(ustanova);
+                    imePotkategorije.setText(nazivPotkategorija);
                 }
                 for (Ustanova ust : ustanovaArrayListPom){
                     if(ust.idPotkategorije.equals(potkategorija)){
                         ustanovaArrayList.add(ust);
+
                     }
                 }
                 adapterObjekata.notifyDataSetChanged();
@@ -61,5 +69,32 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
 
             }
         });
+
+        nazadeGumb = (Button) findViewById(R.id.nazadeGumb);
+        nazadeGumb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                povratakNaPotkategorije();
+            }
+        });
+
+        kategorijeGumb = (Button) findViewById(R.id.kategorijeGumb);
+        kategorijeGumb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                povratakNaKategorije();
+            }
+        });
     }
+
+    private void povratakNaKategorije() {
+        Intent intent = new Intent(this, IzbornikActivity.class);
+        startActivity(intent);
+    }
+
+    private void povratakNaPotkategorije() {
+        Intent intent = new Intent(this, IzbornikPotkategorijaActivity.class);
+        startActivity(intent);
+    }
+
 }

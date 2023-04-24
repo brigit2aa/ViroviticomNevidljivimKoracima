@@ -41,6 +41,7 @@ public class AdapterPotkategorija extends RecyclerView.Adapter<AdapterPotkategor
 
                 Intent intent = new Intent(context.getApplicationContext(), ObjektiPotkategorijeActivity.class);
                 intent.putExtra("idPotkategorije", potkategorija.idPotkategorije);
+                intent.putExtra("nazivPotkategorije", potkategorija.nazivPotkategorije);
                 context.startActivity(intent);
             }
         });
