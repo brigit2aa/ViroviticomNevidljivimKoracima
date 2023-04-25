@@ -22,6 +22,11 @@ public class AdapterTrazilica extends RecyclerView.Adapter<AdapterTrazilica.MyVi
         this.ustanovaArrayList = ustanovaArrayList;
     }
 
+    public void setFilterList(ArrayList<Ustanova> filterList){
+        this.ustanovaArrayList = filterList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public MyViewHolderTrazilica onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

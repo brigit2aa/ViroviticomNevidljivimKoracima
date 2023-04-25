@@ -15,32 +15,40 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo2" />
+        app:srcCompat="@drawable/logo2"
+       />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="90dp">
 
     <androidx.appcompat.widget.SearchView
-        android:layout_width="0dp"
+        android:id="@+id/trazilica"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/objekti_potkategorije"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:iconifiedByDefault="false"
-        app:queryHint="Pretraži..." />
+        app:queryHint="Pretraži..."/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/objekti_potkategorije"
         android:layout_width="wrap_content"
         android:layout_height="420dp"
-        android:layout_marginTop="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.294" />
-
+        app:layout_constraintVertical_bias="0.294"
+        android:layout_gravity="center_horizontal"
+        />
+</LinearLayout>
     <Button
         android:id="@+id/kategorijeGumb"
         android:layout_width="345dp"
