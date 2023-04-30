@@ -59,6 +59,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 intent.putExtra("dodatnaInformacijaSlika", ustanova.getDodatnaInformacijaSlika());
                 intent.putExtra("sirinaVrataUnutraSlika", ustanova.getSirinaVrataUnutraSlika());
                 intent.putExtra("vrstaVrataSlika", ustanova.getVrstaVrataSlika());
+                intent.putExtra("slikaUlaza", ustanova.getSlikaUlaza());
+                intent.putExtra("karta", ustanova.getKarta());
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);
             }
