@@ -55,7 +55,7 @@ public class AdapterTrazilica extends RecyclerView.Adapter<AdapterTrazilica.MyVi
                 intent.putExtra("opisUlaza", ustanova.getOpisUlaza());
                 intent.putExtra("sirinaVrata", ustanova.getSirinaVrata());
                 intent.putExtra("sirinaVrataUnutra", ustanova.getSirinaVrataUnutra());
-                intent.putExtra("vrstaVrata", ustanova.getVrstaVrata());
+                intent.putExtra("vrstaVrata", ustanova.getIdVrata());
                 intent.putExtra("opisPragaSlika", ustanova.getOpisPragaSlika());
                 intent.putExtra("opisUlazaSlika", ustanova.getOpisUlazaSlika());
                 intent.putExtra("sirinaVrataSlika", ustanova.getSirinaVrataSlika());

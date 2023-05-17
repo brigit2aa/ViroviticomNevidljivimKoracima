@@ -66,14 +66,14 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
+            <ImageButton
                 android:id="@+id/kategorijeGumb"
                 android:layout_width="45dp"
                 android:layout_height="45dp"
                 android:layout_marginTop="650dp"
                 android:layout_marginLeft="10dp"
+                android:src="@drawable/ic_baseline_home_24"
                 android:background="@drawable/all_button"
-                android:textColor="@color/white"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

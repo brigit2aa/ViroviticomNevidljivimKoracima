@@ -46,8 +46,8 @@ public class AdapterKategorija extends RecyclerView.Adapter<AdapterKategorija.My
             public void onClick(View v) {
                 Intent intent;
                 if( !kategorija.idKategorije.equals("idTrazilica")){
-                 intent = new Intent(context.getApplicationContext(), IzbornikPotkategorijaActivity.class);
-                intent.putExtra("idKategorije", kategorija.idKategorije);}
+                    intent = new Intent(context.getApplicationContext(), IzbornikPotkategorijaActivity.class);
+                    intent.putExtra("idKategorije", kategorija.idKategorije);}
                 else{
                      intent = new Intent(context.getApplicationContext(), TrazilicaActivity.class);
                 }

@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class IzbornikActivity extends AppCompatActivity {
-    //private ImageButton trazilicaGumb;
+    private Button dodajUstanovuGumb;
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -60,18 +60,18 @@ public class IzbornikActivity extends AppCompatActivity {
             }
         });
 
-        /*trazilicaGumb = (ImageButton) findViewById(R.id.button9);
-        trazilicaGumb.setOnClickListener(new View.OnClickListener() {
+        dodajUstanovuGumb = (Button) findViewById(R.id.dodajUstanovuGumb);
+        dodajUstanovuGumb.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {otvoriTrazilicuActivity();
+            public void onClick(View v) {otvoriDodajUstanovuActivity();
 
 
             }
-        });*/
+        });
     }
 
-    /*private void otvoriTrazilicuActivity() {
-        Intent intent = new Intent(this, TrazilicaActivity.class);
+    private void otvoriDodajUstanovuActivity() {
+        Intent intent = new Intent(this, DodavanjeUstanoveActivity.class);
         startActivity(intent);
-    }*/
+    }
 }

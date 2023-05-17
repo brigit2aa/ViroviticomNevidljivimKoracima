@@ -2,7 +2,22 @@ package com.example.viroviticomnevidljivimkoracima;
 
 public class Ustanova {
 
-    String adresa, email, naziv, telefon, web, idPotkategorije, dodatnaInformacija, dodatnaInformacijaSlika, karta, opisPraga, opisPragaSlika, opisUlaza, opisUlazaSlika, pristupacnost, sirinaVrata, sirinaVrataSlika, sirinaVrataUnutra, sirinaVrataUnutraSlika, slikaUlaza, vrstaVrata, vrstaVrataSlika;
+    String adresa, email, naziv, telefon, web, idPotkategorije, dodatnaInformacija, dodatnaInformacijaSlika, karta, opisPraga, opisPragaSlika, opisUlaza, opisUlazaSlika, pristupacnost, sirinaVrata, sirinaVrataSlika, sirinaVrataUnutra, sirinaVrataUnutraSlika, slikaUlaza, idVrata, vrstaVrataSlika, nazivVrata;
+
+    public Ustanova(String adresa, String email, String naziv, String telefon, String web, String dodatnaInformacija, String karta, String opisPraga, String opisUlaza, String sirinaVrata, String sirinaVrataUnutra) {
+        this.adresa = adresa;
+        this.email = email;
+        this.naziv = naziv;
+        this.telefon = telefon;
+        this.web = web;
+        //this.idPotkategorije = idPotkategorije;
+        this.dodatnaInformacija = dodatnaInformacija;
+        this.karta = karta;
+        this.opisPraga = opisPraga;
+        this.opisUlaza = opisUlaza;
+        this.sirinaVrata = sirinaVrata;
+        this.sirinaVrataUnutra = sirinaVrataUnutra;
+    }
 
     public String getAdresa() {
         return adresa;
@@ -80,11 +95,14 @@ public class Ustanova {
         return slikaUlaza;
     }
 
-    public String getVrstaVrata() {
-        return vrstaVrata;
+    public String getIdVrata() {
+        return idVrata;
     }
 
     public String getVrstaVrataSlika() {
         return vrstaVrataSlika;
     }
+
+
+
 }

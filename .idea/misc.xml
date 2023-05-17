@@ -7,6 +7,7 @@
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/border_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/round_button.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/search.xml" value="0.23796296296296296" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_dodavanje_ustanove.xml" value="0.264" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_glavni.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_izbornik.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_izbornik_potkategorija.xml" value="0.25416666666666665" />
@@ -16,12 +17,20 @@
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_pocetni.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_podaci_objekta.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_trazilica.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/dialog_dodavanje_ustanove.xml" value="0.10740740740740741" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/dialog_lokacija.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/dialog_slika_ulaza.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/kategorija.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/lokacija.xml" value="0.18840579710144928" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/menu_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/menu_potkategorije.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/objekti_potkategorije.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/potkategorija.xml" value="0.1933876811594203" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/prag.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/sirina.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/spinner_sirina.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/vrata.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2703125" />
       </map>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DodavanjeUstanoveActivity">
+
+    <ImageView
+        android:id="@+id/logo2"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginTop="-30dp"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo2" />
+
+    <RelativeLayout
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="100dp">
+
+        <EditText
+            android:id="@+id/naziv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dodaj naziv ustanove"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/adresa"
+            android:layout_below="@id/naziv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dodaj adresu ustanove"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="5dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout"
+            android:layout_below="@id/adresa">
+    <TextView
+        android:id="@+id/odabirPotkategorije"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Odaberi potkategoriju:"
+        android:textColor="@color/black"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+        <Spinner
+            android:id="@+id/spinerPotkategorija"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/odabirPotkategorije"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout2"
+            android:layout_below="@id/layout">
+
+            <TextView
+                android:id="@+id/odabirUlazUObjekt"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:text="Odaberi opis ulaza:"
+                android:textColor="@color/black"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinerUlazUObjekt"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout3"
+            android:layout_below="@id/layout2">
+        <TextView
+            android:id="@+id/odabirSirinaVrata"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Odaberi širinu vrata:"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinerSirinaVrata"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout4"
+            android:layout_below="@id/layout3">
+        <TextView
+            android:id="@+id/odabirVrstaVrata"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Odaberi vrstu vrata:"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinerVrstaVrata"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout5"
+            android:layout_below="@id/layout4">
+        <TextView
+            android:id="@+id/odabirUlazUObjektUnutra"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Odaberi opis praga:"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinerUlazUObjektUnutra"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:id="@+id/layout6"
+            android:layout_below="@id/layout5">
+        <TextView
+            android:id="@+id/odabirSirinaVrataUnutra"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:text="Odaberi širinu vrata unutar ustanove:"
+            android:textColor="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinerSirinaVrataUnutra"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/dodatnaInformacija"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/layout6"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/black"
+            android:hint="Upiši dodatne informacije (lift, WC za OSI...)"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_below="@id/dodatnaInformacija"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/telefon"
+            android:layout_below="@id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Telefon"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/web"
+            android:layout_below="@id/telefon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Web"
+            android:textSize="14dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/black"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/slika"
+                android:layout_below="@id/web"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dodaj link slike ulaza"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/black"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="5dp"/>
+
+            <EditText
+                android:id="@+id/karta"
+                android:layout_below="@id/slika"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Dodaj google maps kartu"
+                android:textSize="14dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/black"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="5dp"/>
+
+    </RelativeLayout>
+    <ImageButton
+        android:id="@+id/dodajUstanovuGumb"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/all_button"
+        android:fontFamily=""
+        android:outlineSpotShadowColor="@color/blue_green"
+        android:src="@drawable/spremi"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--https://www.youtube.com/watch?v=pSY5gq-E244 https://www.youtube.com/watch?v=_N7vckk83iQ https://www.youtube.com/watch?v=T6PepCVSIy4 izgled spinera-->

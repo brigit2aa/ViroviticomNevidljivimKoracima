@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,7 +19,8 @@ public class PodaciObjektaActivity extends AppCompatActivity {
 
     private TextView naziv, adresa, email, telefon, web, dodatnaInformacija, opisPraga, opisUlaza, sirinaVrata, sirinaVrataUnutra, vrstaVrata;
     private  ImageView opisPragaSlika, opisUlazaSlika, sirinaVrataSlika, dodatnaInformacijaSlika, sirinaVrataUnutraSlika, vrstaVrataSlika;
-    private Button kategorijeGumb, nazadeGumb, slikaGumb, kartaGumb;
+    private Button nazadeGumb, slikaGumb, kartaGumb;
+    private ImageButton kategorijeGumb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class PodaciObjektaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_podaci_objekta);
 
         //To sam dodala!
-        //String tipVrata = getIntent().getExtras().getSerializable("sifrarnik").toString();
+        //String nazivVrata = getIntent().getExtras().getSerializable("nazivVrata").toString();
 
         naziv = (TextView) findViewById(R.id.naziv);
         adresa = (TextView) findViewById(R.id.adresa);
@@ -57,8 +59,8 @@ public class PodaciObjektaActivity extends AppCompatActivity {
         opisUlaza.setText(getIntent().getStringExtra("opisUlaza"));
         sirinaVrata.setText(getIntent().getStringExtra("sirinaVrata"));
         sirinaVrataUnutra.setText(getIntent().getStringExtra("sirinaVrataUnutra"));
-        vrstaVrata.setText(getIntent().getStringExtra("vrstaVrata"));
-        //vrstaVrata.setText(tipVrata);tip vrata dodala
+        vrstaVrata.setText(getIntent().getStringExtra("idVrata"));
+        //vrstaVrata.setText(getIntent().getStringExtra(nazivVrata));;//tip vrata dodala
         Picasso.get().load(getIntent().getStringExtra("dodatnaInformacijaSlika")).into(dodatnaInformacijaSlika);
         Picasso.get().load(getIntent().getStringExtra("opisPragaSlika")).into(opisPragaSlika);
         Picasso.get().load(getIntent().getStringExtra("opisUlazaSlika")).into(opisUlazaSlika);
@@ -89,7 +91,7 @@ public class PodaciObjektaActivity extends AppCompatActivity {
             }
         });
 
-        kategorijeGumb = (Button) findViewById(R.id.kategorijeGumb);
+        kategorijeGumb = (ImageButton) findViewById(R.id.kategorijeGumb);
         kategorijeGumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,10 +104,10 @@ public class PodaciObjektaActivity extends AppCompatActivity {
 
         LayoutInflater layoutInflaterLokacija = LayoutInflater.from(this);
         View lokacija = layoutInflaterLokacija.inflate(R.layout.lokacija, null);
-        WebView katra;
-        katra = (WebView) lokacija.findViewById(R.id.karta);
-        katra.getSettings().setJavaScriptEnabled(true);
-        katra.loadUrl(getIntent().getStringExtra("karta"));
+        WebView karta;
+        karta = (WebView) lokacija.findViewById(R.id.karta);
+        karta.getSettings().setJavaScriptEnabled(true);
+        karta.loadUrl(getIntent().getStringExtra("karta"));
 
     }
 

@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +29,7 @@ public class TrazilicaActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     AdapterTrazilica adapterTrailica;
     ArrayList<Ustanova> ustanovaArrayList;
-    private Button kategorijeGumb;
+    private ImageButton kategorijeGumb;
     private SearchView searchView;
 
     @Override
@@ -82,7 +83,7 @@ public class TrazilicaActivity extends AppCompatActivity {
             }
         });
 
-        kategorijeGumb = (Button) findViewById(R.id.kategorijeGumb);
+        kategorijeGumb = (ImageButton) findViewById(R.id.kategorijeGumb);
         kategorijeGumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

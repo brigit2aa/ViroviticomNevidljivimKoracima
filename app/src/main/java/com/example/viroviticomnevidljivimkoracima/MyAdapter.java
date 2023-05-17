@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
                 intent.putExtra("opisUlaza", ustanova.getOpisUlaza());
                 intent.putExtra("sirinaVrata", ustanova.getSirinaVrata());
                 intent.putExtra("sirinaVrataUnutra", ustanova.getSirinaVrataUnutra());
-                intent.putExtra("vrstaVrata", ustanova.getVrstaVrata());
+                intent.putExtra("idVrata", ustanova.getIdVrata());
                 intent.putExtra("opisPragaSlika", ustanova.getOpisPragaSlika());
                 intent.putExtra("opisUlazaSlika", ustanova.getOpisUlazaSlika());
                 intent.putExtra("sirinaVrataSlika", ustanova.getSirinaVrataSlika());

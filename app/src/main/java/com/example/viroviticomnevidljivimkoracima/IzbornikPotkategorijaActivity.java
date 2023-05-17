@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,7 +26,7 @@ public class IzbornikPotkategorijaActivity extends AppCompatActivity {
     AdapterPotkategorija adapterPotkategorija;
     ArrayList<Potkategorija> potkategorijaArrayList;
     ArrayList<Potkategorija> potkategorijaArrayListPom;
-    private Button kategorijeGumb;
+    private ImageButton kategorijeGumb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +67,7 @@ public class IzbornikPotkategorijaActivity extends AppCompatActivity {
             }
         });
 
-        kategorijeGumb = (Button) findViewById(R.id.kategorijeGumb);
+        kategorijeGumb = (ImageButton) findViewById(R.id.kategorijeGumb);
         kategorijeGumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

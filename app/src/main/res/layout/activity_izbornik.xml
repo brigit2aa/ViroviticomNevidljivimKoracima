@@ -43,14 +43,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/odustaniGumb"
+        android:id="@+id/dodajUstanovuGumb"
         android:layout_width="345dp"
         android:layout_height="45dp"
         android:layout_marginTop="660dp"
         android:background="@drawable/all_button"
         android:fontFamily=""
         android:outlineSpotShadowColor="@color/blue_green"
-        android:text="ODUSTANI"
+        android:text="DODAJ USTANOVU"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

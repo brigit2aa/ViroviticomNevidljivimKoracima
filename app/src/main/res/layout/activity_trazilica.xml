@@ -27,10 +27,9 @@
     <androidx.appcompat.widget.SearchView
         android:id="@+id/trazilica"
         android:layout_width="345dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         app:iconifiedByDefault="false"
-        android:background="@drawable/search"
         android:layout_gravity="center_horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,7 +50,7 @@
         android:layout_gravity="center_horizontal"
         />
 </LinearLayout>
-    <Button
+    <ImageButton
         android:id="@+id/kategorijeGumb"
         android:layout_width="345dp"
         android:layout_height="45dp"
@@ -59,7 +58,7 @@
         android:background="@drawable/all_button"
         android:fontFamily=""
         android:outlineSpotShadowColor="@color/blue_green"
-        android:text="IZBORNIK KATEGORIJA"
+        android:src="@drawable/ic_baseline_home_24"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

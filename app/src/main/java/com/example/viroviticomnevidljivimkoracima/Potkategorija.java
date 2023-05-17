@@ -21,4 +21,20 @@ public class Potkategorija {
     public String getIdPotkategorije() {
         return idPotkategorije;
     }
+
+    public void setIdKategorije(String idKategorije) {
+        this.idKategorije = idKategorije;
+    }
+
+    public void setGetIdKategorije(String getIdKategorije) {
+        this.getIdKategorije = getIdKategorije;
+    }
+
+    public void setNazivPotkategorije(String nazivPotkategorije) {
+        this.nazivPotkategorije = nazivPotkategorije;
+    }
+
+    public void setIdPotkategorije(String idPotkategorije) {
+        this.idPotkategorije = idPotkategorije;
+    }
 }
