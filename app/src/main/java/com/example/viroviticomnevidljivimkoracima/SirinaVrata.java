@@ -21,6 +21,6 @@ public class SirinaVrata {
 
     @Override
     public String toString() {
-        return idSirinaVrata;
+        return sirinaVrataCm;
     }
 }

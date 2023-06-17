@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/add_image.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/all_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/border_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/round_button.xml" value="0.1111111111111111" />
@@ -28,6 +29,7 @@
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/objekti_potkategorije.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/potkategorija.xml" value="0.1933876811594203" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/prag.xml" value="0.19791666666666666" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/prilagodba.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/sirina.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/spinner_sirina.xml" value="0.19791666666666666" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/vrata.xml" value="0.19791666666666666" />

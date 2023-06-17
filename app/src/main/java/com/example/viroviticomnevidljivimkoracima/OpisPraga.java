@@ -21,6 +21,6 @@ public class OpisPraga {
 
     @Override
     public String toString() {
-        return idPraga;
+        return opisPraga;
     }
 }

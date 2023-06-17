@@ -12,21 +12,21 @@ import java.util.ArrayList;
 public class AdapterPotkategorijaBase extends BaseAdapter {
 
     Context context;
-    ArrayList<Potkategorija> potkategorijaArrayList;
+    ArrayList<Potkategorija> potkategorijaArrayList2;
 
-    public AdapterPotkategorijaBase(Context context, ArrayList<Potkategorija> potkategorijaArrayList) {
+    public AdapterPotkategorijaBase(Context context, ArrayList<Potkategorija> potkategorijaArrayList2) {
         this.context = context;
-        this.potkategorijaArrayList = potkategorijaArrayList;
+        this.potkategorijaArrayList2 = potkategorijaArrayList2;
     }
 
     @Override
     public int getCount() {
-        return potkategorijaArrayList.size();
+        return potkategorijaArrayList2.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return potkategorijaArrayList.get(position);
+        return potkategorijaArrayList2.get(position);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class AdapterPotkategorijaBase extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.potkategorija, null, false);
             TextView nazivPotkategorije = convertView.findViewById(R.id.nazivPotkategorije);
 
-            nazivPotkategorije.setText(potkategorijaArrayList.get(position).getNazivPotkategorije());
+            nazivPotkategorije.setText(potkategorijaArrayList2.get(position).getNazivPotkategorije());
         }
         return convertView;
     }

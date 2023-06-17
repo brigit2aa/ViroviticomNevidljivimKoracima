@@ -37,4 +37,9 @@ public class Potkategorija {
     public void setIdPotkategorije(String idPotkategorije) {
         this.idPotkategorije = idPotkategorije;
     }
+
+    @Override
+    public String toString() {
+        return  idPotkategorije;
+    }
 }

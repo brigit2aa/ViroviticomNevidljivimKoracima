@@ -21,6 +21,6 @@ public class VrstaVrata {
 
     @Override
     public String toString() {
-        return idVrata;
+        return nazivVrata;
     }
 }
