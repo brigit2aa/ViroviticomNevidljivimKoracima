@@ -1,28 +1,39 @@
 package com.example.viroviticomnevidljivimkoracima;
 
 
+import android.net.Uri;
+
 public class Prilagodba {
     String idPrilagodbe;
-    int opisPrilagodbe;
+    String opisPrilagodbe;
+    String tekstPrilagodbe;
 
     public String getIdPrilagodbe() {
         return idPrilagodbe;
     }
 
-    public int getOpisPrilagodbe() {
+    public String getOpisPrilagodbe() {
         return opisPrilagodbe;
+    }
+
+    public String getTekstPrilagodbe() {
+        return tekstPrilagodbe;
     }
 
     public void setIdPrilagodbe(String idPrilagodbe) {
         this.idPrilagodbe = idPrilagodbe;
     }
 
-    public void setOpisPrilagodbe(int opisPrilagodbe) {
+    public void setOpisPrilagodbe(String opisPrilagodbe) {
         this.opisPrilagodbe = opisPrilagodbe;
     }
 
-    /* @Override
+    public void setTekstPrilagodbe(String tekstPrilagodbe) {
+        this.tekstPrilagodbe = tekstPrilagodbe;
+    }
+
+    @Override
     public String toString() {
-        return idPrilagodbe;
-    }*/
+        return opisPrilagodbe;
+    }
 }

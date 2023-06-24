@@ -4,6 +4,9 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ClipDrawable;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -126,6 +129,7 @@ public class PodaciObjektaActivity extends AppCompatActivity {
 
         AlertDialog dialog = alertDialog.create();
 
+
         zatvoriGumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,6 +137,7 @@ public class PodaciObjektaActivity extends AppCompatActivity {
             }
         });
         dialog.show();
+        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     private void povratakNaKategorije() {

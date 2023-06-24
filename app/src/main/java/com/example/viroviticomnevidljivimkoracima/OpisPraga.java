@@ -3,6 +3,7 @@ package com.example.viroviticomnevidljivimkoracima;
 public class OpisPraga {
     String idPraga, opisPraga;
 
+
     public String getIdPraga() {
         return idPraga;
     }
@@ -18,6 +19,7 @@ public class OpisPraga {
     public void setOpisPraga(String opisPraga) {
         this.opisPraga = opisPraga;
     }
+
 
     @Override
     public String toString() {

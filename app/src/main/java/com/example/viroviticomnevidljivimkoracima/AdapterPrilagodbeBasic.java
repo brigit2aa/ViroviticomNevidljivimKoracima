@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -38,10 +41,13 @@ public class AdapterPrilagodbeBasic extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null){
             convertView = LayoutInflater.from(context).inflate(R.layout.prilagodba, null, false);
+            TextView tekstPrilagodbe = convertView.findViewById(R.id.tekstPrilagodbe);
             ImageView opisPrilagodbe = convertView.findViewById(R.id.opisPrilagodbe);
 
-            opisPrilagodbe.setImageResource(prilagodbaArrayList.get(position).getOpisPrilagodbe());
+            Glide.with(context).load(prilagodbaArrayList.get(position).getOpisPrilagodbe()).into(opisPrilagodbe);
+            tekstPrilagodbe.setText(prilagodbaArrayList.get(position).getTekstPrilagodbe());
         }
         return convertView;
     }
+
 }

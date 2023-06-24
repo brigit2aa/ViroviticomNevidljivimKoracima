@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -34,7 +35,7 @@ import java.util.ArrayList;
 
 public class DodavanjeUstanoveActivity extends AppCompatActivity {
 
-    Spinner spinnerPotkategorija, spinnerOpisUlaza, spinnerSirinaVrata, spinnerVrstaVrata, spinnerOpisPraga, spinnerSirinaVrataUnutarUstanove, spinerSlikaUlazUObjekt;
+    Spinner spinnerPotkategorija, spinnerOpisUlaza, spinnerSirinaVrata, spinnerVrstaVrata, spinnerOpisPraga, spinnerSirinaVrataUnutarUstanove, spinnerSlikaDodatnaInformacija, spinerSlikaUlazUObjekt, spinerSlikaSirinaVrata, spinerSlikaVrstaVrata, spinerSlikaUlazUObjektUnutra, spinerSlikaSirinaVrataUnutra;
     ImageButton dodajUstanovuGumb;
     Button dodajSliku;
     ImageView slika;
@@ -79,8 +80,14 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
         spinnerOpisPraga = findViewById(R.id.spinerUlazUObjektUnutra);
         spinnerSirinaVrata = findViewById(R.id.spinerSirinaVrata);
         spinnerSirinaVrataUnutarUstanove = findViewById(R.id.spinerSirinaVrataUnutra);
+        spinnerSlikaDodatnaInformacija = findViewById(R.id.spinerDodatnaInformacija);
+        //Sad dodala!
         spinerSlikaUlazUObjekt = findViewById(R.id.spinerSlikaUlazUObjekt);
-
+        spinerSlikaSirinaVrata = findViewById(R.id.spinerSlikaSirinaVrata);
+        spinerSlikaVrstaVrata = findViewById(R.id.spinerSlikaVrstaVrata);
+        spinerSlikaUlazUObjektUnutra = findViewById(R.id.spinerSlikaUlazUObjektUnutra);
+        spinerSlikaSirinaVrataUnutra = findViewById(R.id.spinerSlikaSirinaVrataUnutra);
+        //
         databaseReference = FirebaseDatabase.getInstance().getReference("sifrarnik");
         databaseReference1 = FirebaseDatabase.getInstance().getReference("OpisPraga");
         databaseReference2 = FirebaseDatabase.getInstance().getReference("sirinaVrata");
@@ -104,17 +111,19 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
         spinnerSirinaVrata.setAdapter(adapterSirinaVrata);
         spinnerSirinaVrataUnutarUstanove.setAdapter(adapterSirinaVrata);
 
-        prilagodbaArrayList = new ArrayList<>();
-        adapterPrilagodbeBasic = new AdapterPrilagodbeBasic(this, prilagodbaArrayList);
-        spinerSlikaUlazUObjekt.setAdapter(adapterPrilagodbeBasic);
-
-
         potkategorijaArrayList2 = new ArrayList<>();
         adapterPotkategorijaBase = new AdapterPotkategorijaBase(this, potkategorijaArrayList2);
         spinnerPotkategorija.setAdapter(adapterPotkategorijaBase);
         //spinnerPotkategorija.setPrompt("Odaberi");
 
-
+        prilagodbaArrayList = new ArrayList<>();
+        adapterPrilagodbeBasic = new AdapterPrilagodbeBasic(this, prilagodbaArrayList);
+        spinnerSlikaDodatnaInformacija.setAdapter(adapterPrilagodbeBasic);
+        spinerSlikaUlazUObjekt.setAdapter(adapterPrilagodbeBasic);
+        spinerSlikaSirinaVrata.setAdapter(adapterPrilagodbeBasic);
+        spinerSlikaVrstaVrata.setAdapter(adapterPrilagodbeBasic);
+        spinerSlikaUlazUObjektUnutra.setAdapter(adapterPrilagodbeBasic);
+        spinerSlikaSirinaVrataUnutra.setAdapter(adapterPrilagodbeBasic);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -184,7 +193,7 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
             }
         });
 
-        /*databaseReference5.addValueEventListener(new ValueEventListener() {
+        databaseReference5.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot5 : snapshot.getChildren()){
@@ -198,7 +207,7 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
-        });*/
+        });
 
         dodajSliku.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -268,30 +277,12 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
         }
     */
     private void dodajNovuUstanovu() {
-        /*String idPotkategorije = spinnerPotkategorija.getSelectedItem().toString();
-        //String vrstaVrata = spinnerVrstaVrata.getSelectedItem().toString();
-        String opisUlaza = spinnerOpisUlaza.getSelectedItem().toString();
-        String opisPraga = spinnerOpisPraga.getSelectedItem().toString();
-        String sirinaVrata = spinnerSirinaVrata.getSelectedItem().toString();
-        String sirinaVrataUnutra = spinnerSirinaVrataUnutarUstanove.getSelectedItem().toString();
-        String adresa = adresatxt.getText().toString();
-        String email = emailtxt.getText().toString();
-        String naziv = nazivtxt.getText().toString();
-        String telefon = telefontxt.getText().toString();
-        String web = webtxt.getText().toString();
-        String dodatnaInformacija = dodatnaInformacijatxt.getText().toString();
-        String karta = kartatxt.getText().toString();*/
-        //String slikaUlaza = slika.setImageURI(imageUri);
 
-
-
-
-        //if (!opisUlaza.isEmpty() && !opisPraga.isEmpty() && !sirinaVrata.isEmpty() && sirinaVrataUnutra.isEmpty()){
-         //   UstanovaDodavanje ustanovaDodavanje = new UstanovaDodavanje(/*adresa, email, naziv, telefon, web, idPotkategorije, dodatnaInformacija, karta, opisPraga, opisUlaza, sirinaVrata, sirinaVrataUnutra*/);
-
-
-
-            StorageReference reference = storageReference.child("slike").child(System.currentTimeMillis()+"");
+        if (adresatxt.getText().toString().isEmpty() || emailtxt.getText().toString().isEmpty() || nazivtxt.getText().toString().isEmpty() || telefontxt.getText().toString().isEmpty() || webtxt.getText().toString().isEmpty() || kartatxt.getText().toString().isEmpty()){
+            Toast.makeText(getApplicationContext(), "Upišite podatke.", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            StorageReference reference = storageReference.child("slike").child(System.currentTimeMillis() + "");
             reference.putFile(imageUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -299,18 +290,22 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
                     reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            ///tu sam stala
-                            UstanovaDodavanje ustanovaDodavanje2 = new UstanovaDodavanje(/*adresa, email, naziv, telefon, web, idPotkategorije, dodatnaInformacija, karta, opisPraga, opisUlaza, sirinaVrata, sirinaVrataUnutra*/);
+
+                            UstanovaDodavanje ustanovaDodavanje2 = new UstanovaDodavanje();
                             ustanovaDodavanje2.setSlikaUlaza(uri.toString());
                             ustanovaDodavanje2.setIdPotkategorije(spinnerPotkategorija.getSelectedItem().toString());
-                            //ustanovaDodavanje2.setIdPotkategorije(spinnerVrstaVrata.getSelectedItem().toString());
-                            //String vrstaVrata = spinnerVrstaVrata.getSelectedItem().toString();
-                            ustanovaDodavanje2.setIdVrata(spinnerVrstaVrata.getSelectedItem().toString());// to sam sad popravila
+                            ustanovaDodavanje2.setIdVrata(spinnerVrstaVrata.getSelectedItem().toString());
                             ustanovaDodavanje2.setOpisUlaza(spinnerOpisUlaza.getSelectedItem().toString());
+                            ustanovaDodavanje2.setOpisUlazaSlika(spinerSlikaUlazUObjekt.getSelectedItem().toString());//taj sam popravila
                             ustanovaDodavanje2.setOpisPraga(spinnerOpisPraga.getSelectedItem().toString());
+                            ustanovaDodavanje2.setOpisPragaSlika(spinerSlikaUlazUObjektUnutra.getSelectedItem().toString());//i taj sam
+                            ustanovaDodavanje2.setSirinaVrataSlika(spinerSlikaSirinaVrata.getSelectedItem().toString());
+                            ustanovaDodavanje2.setVrstaVrataSlika(spinerSlikaVrstaVrata.getSelectedItem().toString());
+                            ustanovaDodavanje2.setSirinaVrataUnutraSlika(spinerSlikaSirinaVrataUnutra.getSelectedItem().toString());
                             ustanovaDodavanje2.setSirinaVrata(spinnerSirinaVrata.getSelectedItem().toString());
                             ustanovaDodavanje2.setSirinaVrataUnutra(spinnerSirinaVrataUnutarUstanove.getSelectedItem().toString());
-                            //ustanovaDodavanje2.setOpisUlazaSlika(spinerSlikaUlazUObjekt.getSelectedItem().toString());
+                            ustanovaDodavanje2.setDodatnaInformacijaSlika(spinnerSlikaDodatnaInformacija.getSelectedItem().toString());
+
                             ustanovaDodavanje2.setAdresa(adresatxt.getText().toString());
                             ustanovaDodavanje2.setEmail(emailtxt.getText().toString());
                             ustanovaDodavanje2.setNaziv(nazivtxt.getText().toString());
@@ -318,6 +313,7 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
                             ustanovaDodavanje2.setWeb(webtxt.getText().toString());
                             ustanovaDodavanje2.setDodatnaInformacija(dodatnaInformacijatxt.getText().toString());
                             ustanovaDodavanje2.setKarta(kartatxt.getText().toString());
+
 
                             FirebaseDatabase.getInstance().getReference("ustanova").push().setValue(ustanovaDodavanje2);
                             adresatxt.setText("");
@@ -330,24 +326,12 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
 
                         }
                     });
-
                 }
             });
-        Toast.makeText(DodavanjeUstanoveActivity.this, "Ustanova je uspješno dodana!", Toast.LENGTH_SHORT).show();
-
-            /*FirebaseDatabase.getInstance().getReference("ustanova").push().setValue(ustanovaDodavanje);
-            adresatxt.setText("");
-            emailtxt.setText("");
-            nazivtxt.setText("");
-            telefontxt.setText("");
-            webtxt.setText("");
-            dodatnaInformacijatxt.setText("");
-            kartatxt.setText("");
             Toast.makeText(DodavanjeUstanoveActivity.this, "Ustanova je uspješno dodana!", Toast.LENGTH_SHORT).show();
-        //}*/
-
-
-
+            Intent intent = new Intent(this, IzbornikActivity.class);
+            startActivity(intent
+            );
+        }
     }
-}//https://www.youtube.com/watch?v=9-oa4OS7lUQ dodavanje slike https://www.youtube.com/watch?v=4J-YUnoWEZw https://www.youtube.com/watch?v=g2Iibnnqga0 https://www.youtube.com/watch?v=CQ5qcJetYAI https://www.youtube.com/watch?v=gsVMHoSGJBI https://www.geeksforgeeks.org/android-how-to-upload-an-image-on-firebase-storage/
-//https://www.youtube.com/watch?v=gsVMHoSGJBI taj koristi https://stackoverflow.com/questions/61436207/upload-images-to-firebase-storage-and-store-a-link-in-firebase-database
+}

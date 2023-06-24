@@ -16,6 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class IzbornikActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.menu);
         databaseReference = FirebaseDatabase.getInstance().getReference("kategorija");
+        Query query = databaseReference.orderByChild("redniBrojIspisa");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         //
@@ -44,7 +46,7 @@ public class IzbornikActivity extends AppCompatActivity {
         adapterKategorija = new AdapterKategorija(this, kategorijaArrayList);
         recyclerView.setAdapter(adapterKategorija);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
