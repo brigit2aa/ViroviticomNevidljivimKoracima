@@ -13,4 +13,7 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/cardBackgroundColor</item>
         <!-- Customize your theme here. -->
     </style>
+    <style name="MyTransparentDialog" parent="@android:style/Theme.Material.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_background_material</item>
+    </style>
 </resources>

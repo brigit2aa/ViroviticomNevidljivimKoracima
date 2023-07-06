@@ -28,7 +28,6 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
     ArrayList<Ustanova> ustanovaArrayList;
     ArrayList<Ustanova> ustanovaArrayListPom;
     TextView imePotkategorije;
-    private Button nazadeGumb;
     private ImageButton kategorijeGumb;
 
 
@@ -73,14 +72,6 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
             }
         });
 
-        nazadeGumb = (Button) findViewById(R.id.nazadeGumb);
-        nazadeGumb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                povratakNaPotkategorije();
-            }
-        });
-
         kategorijeGumb = (ImageButton) findViewById(R.id.kategorijeGumb);
         kategorijeGumb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +83,6 @@ public class ObjektiPotkategorijeActivity extends AppCompatActivity {
 
     private void povratakNaKategorije() {
         Intent intent = new Intent(this, IzbornikActivity.class);
-        startActivity(intent);
-    }
-
-    private void povratakNaPotkategorije() {
-        Intent intent = new Intent(this, IzbornikPotkategorijaActivity.class);
         startActivity(intent);
     }
 

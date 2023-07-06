@@ -13,10 +13,12 @@ public class AdapterPotkategorijaBase extends BaseAdapter {
 
     Context context;
     ArrayList<Potkategorija> potkategorijaArrayList2;
+    LayoutInflater inflater;
 
     public AdapterPotkategorijaBase(Context context, ArrayList<Potkategorija> potkategorijaArrayList2) {
         this.context = context;
         this.potkategorijaArrayList2 = potkategorijaArrayList2;
+        inflater = (LayoutInflater.from(context.getApplicationContext()));
     }
 
     @Override
@@ -36,12 +38,12 @@ public class AdapterPotkategorijaBase extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        if(convertView == null){
-            convertView = LayoutInflater.from(context).inflate(R.layout.potkategorija, null, false);
-            TextView nazivPotkategorije = convertView.findViewById(R.id.nazivPotkategorije);
 
-            nazivPotkategorije.setText(potkategorijaArrayList2.get(position).getNazivPotkategorije());
-        }
+        convertView = inflater.inflate(R.layout.potkategorija, null);
+        TextView nazivPotkategorije = convertView.findViewById(R.id.nazivPotkategorije);
+
+        nazivPotkategorije.setText(potkategorijaArrayList2.get(position).getNazivPotkategorije());
+
         return convertView;
     }
 }

@@ -3,15 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/add_image.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/all_button.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/border_button.xml" value="0.2703125" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/dialog_background_material.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/dodavanje.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/gradient_background.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/gradient_background_all.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/gradient_background_all_end.xml" value="0.2703125" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2703125" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/round_button.xml" value="0.1111111111111111" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/search.xml" value="0.23796296296296296" />
+        <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/drawable/spremi.xml" value="0.2703125" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_dodavanje_ustanove.xml" value="0.264" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_glavni.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Brigita/AndroidStudioProjects/Viroviticomnevidljivimkoracima/app/src/main/res/layout/activity_izbornik.xml" value="0.25416666666666665" />

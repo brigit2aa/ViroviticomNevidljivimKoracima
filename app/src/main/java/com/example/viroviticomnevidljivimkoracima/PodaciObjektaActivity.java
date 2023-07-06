@@ -22,7 +22,7 @@ public class PodaciObjektaActivity extends AppCompatActivity {
 
     private TextView naziv, adresa, email, telefon, web, dodatnaInformacija, opisPraga, opisUlaza, sirinaVrata, sirinaVrataUnutra, vrstaVrata;
     private  ImageView opisPragaSlika, opisUlazaSlika, sirinaVrataSlika, dodatnaInformacijaSlika, sirinaVrataUnutraSlika, vrstaVrataSlika;
-    private Button nazadeGumb, slikaGumb, kartaGumb;
+    private Button slikaGumb, kartaGumb;
     private ImageButton kategorijeGumb;
 
     @Override
@@ -86,13 +86,6 @@ public class PodaciObjektaActivity extends AppCompatActivity {
                 prikaziLokaciju();
             }
         });
-        nazadeGumb = (Button) findViewById(R.id.nazadeGumb);
-        nazadeGumb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                povratakNaObjektePotkategorije();
-            }
-        });
 
         kategorijeGumb = (ImageButton) findViewById(R.id.kategorijeGumb);
         kategorijeGumb.setOnClickListener(new View.OnClickListener() {
@@ -116,37 +109,25 @@ public class PodaciObjektaActivity extends AppCompatActivity {
 
     private void prikaziSlikuUlaza() {
 
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(this, R.style.MyTransparentDialog);
         LayoutInflater layoutInflater = LayoutInflater.from(this);
         View slikaUlazaDialog = layoutInflater.inflate(R.layout.dialog_slika_ulaza, null);
         ImageView slikaUlaza;
-        Button zatvoriGumb;
         slikaUlaza = (ImageView) slikaUlazaDialog.findViewById(R.id.slikaUlaza);
-        zatvoriGumb = (Button) slikaUlazaDialog.findViewById(R.id.zatvoriGumb);
+
         Picasso.get().load(getIntent().getStringExtra("slikaUlaza")).into(slikaUlaza);
 
         alertDialog.setView(slikaUlazaDialog);
 
         AlertDialog dialog = alertDialog.create();
 
-
-        zatvoriGumb.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
         dialog.show();
-        //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
     }
 
     private void povratakNaKategorije() {
         Intent intent = new Intent(this, IzbornikActivity.class);
         startActivity(intent);
     }
-
-    private void povratakNaObjektePotkategorije() {
-        Intent intent = new Intent(this, ObjektiPotkategorijeActivity.class);
-        startActivity(intent);
-    }
+    
 }

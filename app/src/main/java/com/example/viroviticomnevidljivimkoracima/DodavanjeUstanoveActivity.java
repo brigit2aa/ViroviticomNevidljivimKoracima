@@ -30,6 +30,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -37,7 +38,7 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
 
     Spinner spinnerPotkategorija, spinnerOpisUlaza, spinnerSirinaVrata, spinnerVrstaVrata, spinnerOpisPraga, spinnerSirinaVrataUnutarUstanove, spinnerSlikaDodatnaInformacija, spinerSlikaUlazUObjekt, spinerSlikaSirinaVrata, spinerSlikaVrstaVrata, spinerSlikaUlazUObjektUnutra, spinerSlikaSirinaVrataUnutra;
     ImageButton dodajUstanovuGumb;
-    Button dodajSliku;
+    ImageButton dodajSliku;
     ImageView slika;
     EditText dodatnaInformacijatxt, emailtxt, telefontxt, webtxt, kartatxt, nazivtxt, adresatxt;
     DatabaseReference databaseReference, databaseReference1, databaseReference2, databaseReference3, databaseReference4, databaseReference5;
@@ -55,10 +56,6 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
     private Uri imageUri;
     StorageReference storageReference;
 
-    //DatabaseReference databaseReferenceUpload = FirebaseDatabase.getInstance().getReference().child("ustanova");
-    //StorageReference storageReference = FirebaseStorage.getInstance().getReference();
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,7 +65,7 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
         emailtxt = (EditText) findViewById(R.id.email);
         telefontxt = (EditText) findViewById(R.id.telefon);
         webtxt = (EditText) findViewById(R.id.web);
-        dodajSliku = (Button) findViewById(R.id.slikaUcitaj);
+        dodajSliku = (ImageButton) findViewById(R.id.slikaUcitaj);
         slika = (ImageView) findViewById(R.id.slika);
         kartatxt = (EditText) findViewById(R.id.karta);
         nazivtxt = (EditText) findViewById(R.id.naziv);
@@ -243,39 +240,6 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
         }
     }
 
-    /*private void odaberiSliku(Uri uri) {
-            StorageReference storageReference = reference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
-            storageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-
-                    storageReference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-
-                            Toast.makeText(DodavanjeUstanoveActivity.this, "Slika je učitana!", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                }
-            }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onProgress(@NonNull UploadTask.TaskSnapshot snapshot) {
-
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(DodavanjeUstanoveActivity.this, "Učitaj sliku!", Toast.LENGTH_SHORT).show();
-                }
-            });
-        }
-
-        private  String getFileExtension(Uri mUri){
-            ContentResolver contentResolver = getContentResolver();
-            MimeTypeMap mimeTypeMap = MimeTypeMap.getSingleton();
-            return  mimeTypeMap.getExtensionFromMimeType(contentResolver.getType(mUri));
-        }
-    */
     private void dodajNovuUstanovu() {
 
         if (adresatxt.getText().toString().isEmpty() || emailtxt.getText().toString().isEmpty() || nazivtxt.getText().toString().isEmpty() || telefontxt.getText().toString().isEmpty() || webtxt.getText().toString().isEmpty() || kartatxt.getText().toString().isEmpty()){
@@ -329,9 +293,29 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
                 }
             });
             Toast.makeText(DodavanjeUstanoveActivity.this, "Ustanova je uspješno dodana!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, IzbornikActivity.class);
-            startActivity(intent
-            );
+            Intent intent = new Intent(this, PodaciObjektaActivity.class);
+
+                intent.putExtra("naziv", nazivtxt.getText().toString());
+                intent.putExtra("adresa", adresatxt.getText().toString());
+                intent.putExtra("email", emailtxt.getText().toString());
+                intent.putExtra("telefon", telefontxt.getText().toString());
+                intent.putExtra("web", webtxt.getText().toString());
+                intent.putExtra("karta", kartatxt.getText().toString());
+                intent.putExtra("dodatnaInformacija", dodatnaInformacijatxt.getText().toString());
+                intent.putExtra("opisPraga", spinnerOpisPraga.getSelectedItem().toString());
+                intent.putExtra("opisUlaza", spinnerOpisUlaza.getSelectedItem().toString());
+                intent.putExtra("sirinaVrata", spinnerSirinaVrata.getSelectedItem().toString());
+                intent.putExtra("sirinaVrataUnutra", spinnerSirinaVrataUnutarUstanove.getSelectedItem().toString());
+                intent.putExtra("idVrata",spinnerVrstaVrata.getSelectedItem().toString());
+                intent.putExtra("dodatnaInformacijaSlika", spinnerSlikaDodatnaInformacija.getSelectedItem().toString());
+                intent.putExtra("opisPragaSlika", spinerSlikaUlazUObjektUnutra.getSelectedItem().toString());
+                intent.putExtra("opisUlazaSlika",spinerSlikaUlazUObjekt.getSelectedItem().toString());
+                intent.putExtra("sirinaVrataSlika", spinerSlikaSirinaVrata.getSelectedItem().toString());
+                intent.putExtra("sirinaVrataUnutraSlika", spinerSlikaSirinaVrataUnutra.getSelectedItem().toString());
+                intent.putExtra("vrstaVrataSlika", spinerSlikaVrstaVrata.getSelectedItem().toString());
+                intent.putExtra("slikaUlaza", imageUri.toString());
+
+            startActivity(intent);
         }
     }
 }

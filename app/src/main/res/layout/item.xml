@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="1dp"
+    app:cardCornerRadius="4dp"
     android:layout_margin="4dp"
-    app:cardBackgroundColor="@android:color/transparent"
+    app:cardBackgroundColor="@color/transparentnaBoja"
     android:outlineSpotShadowColor="@color/plava">
 
     <LinearLayout
@@ -23,6 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ime objekta"
+                android:textStyle="bold"
                 android:textColor="@color/black"
                 android:textAllCaps="true"
                 android:textSize="14dp"/>

@@ -8,16 +8,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class PocetniActivity extends AppCompatActivity {
-    //FirebaseDatabase database = FirebaseDatabase.getInstance();
-    //DatabaseReference myRef = database.getReference("message");
 
     private Button kreniGumb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pocetni);
-        //Upis u bazu
-        //myRef.setValue("Hello, World!");
 
         kreniGumb = (Button) findViewById(R.id.kreniGumb);
         kreniGumb.setOnClickListener(new View.OnClickListener() {

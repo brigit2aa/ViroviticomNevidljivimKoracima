@@ -3,20 +3,8 @@ package com.example.viroviticomnevidljivimkoracima;
 public class UstanovaDodavanje {
     String adresa, email, naziv, telefon, web, idPotkategorije, dodatnaInformacija, dodatnaInformacijaSlika, karta, opisPraga, opisPragaSlika, opisUlaza, opisUlazaSlika, pristupacnost, sirinaVrata, sirinaVrataSlika, sirinaVrataUnutra, sirinaVrataUnutraSlika, slikaUlaza, idVrata, vrstaVrataSlika, nazivVrata;
 
-    public UstanovaDodavanje(/*String adresa, String email, String naziv, String telefon, String web, String idPotkategorije, String dodatnaInformacija, String karta, String opisPraga, String opisUlaza, String sirinaVrata, String sirinaVrataUnutra, slikaUlaza*/) {
-        /*this.adresa = adresa;
-        this.email = email;
-        this.naziv = naziv;
-        this.telefon = telefon;
-        this.web = web;
-        this.idPotkategorije = idPotkategorije;
-        this.dodatnaInformacija = dodatnaInformacija;
-        this.karta = karta;
-        this.opisPraga = opisPraga;
-        this.opisUlaza = opisUlaza;
-        this.sirinaVrata = sirinaVrata;
-        this.sirinaVrataUnutra = sirinaVrataUnutra;
-        this.slikaUlaza = slikaUlaza;*/
+    public UstanovaDodavanje() {
+
     }
     public String getAdresa() {
         return adresa;

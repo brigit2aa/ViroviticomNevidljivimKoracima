@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class IzbornikActivity extends AppCompatActivity {
-    private Button dodajUstanovuGumb;
+    private ImageButton dodajUstanovuGumb;
 
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
@@ -62,7 +62,7 @@ public class IzbornikActivity extends AppCompatActivity {
             }
         });
 
-        dodajUstanovuGumb = (Button) findViewById(R.id.dodajUstanovuGumb);
+        dodajUstanovuGumb = (ImageButton) findViewById(R.id.dodajUstanovuGumb);
         dodajUstanovuGumb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {otvoriDodajUstanovuActivity();
