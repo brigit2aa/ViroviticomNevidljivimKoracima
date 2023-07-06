@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718144662333",
+    "project_id": "nevidljivimkoracimaviroviticom",
+    "storage_bucket": "nevidljivimkoracimaviroviticom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718144662333:android:05bf2f0b4260cbdcf7f354",
+        "android_client_info": {
+          "package_name": "com.example.viroviticomnevidljivimkoracima"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718144662333-nokngv805kv6bg9gu4hh153kb0nlga2r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWmNxoQKvR4Kksr84a9grm75hFLDBB3yg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718144662333-nokngv805kv6bg9gu4hh153kb0nlga2r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

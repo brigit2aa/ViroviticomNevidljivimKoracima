@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    app:cardCornerRadius="1dp"
+    android:layout_margin="3dp"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="130dp"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:orientation="horizontal"
+        android:background="@drawable/border_button">
+
+        <ImageView
+            android:id="@+id/slikaKategorije"
+            android:layout_width="225dp"
+            android:layout_height="225dp"
+            android:layout_marginLeft="-62dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY" />
+    </LinearLayout>
+        <TextView
+            android:id="@+id/nazivKategorije"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Naziv kategorije"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="11dp"
+            android:textFontWeight="@integer/material_motion_duration_long_1"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
