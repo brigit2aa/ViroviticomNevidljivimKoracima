@@ -1,13 +1,18 @@
 package com.example.viroviticomnevidljivimkoracima;
 
+import static android.content.ContentValues.TAG;
+
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.AdapterView;
@@ -19,13 +24,16 @@ import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -292,9 +300,36 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
                     });
                 }
             });
-            Toast.makeText(DodavanjeUstanoveActivity.this, "Ustanova je uspješno dodana!", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(this, PodaciObjektaActivity.class);
 
+            Toast.makeText(DodavanjeUstanoveActivity.this, "Ustanova je uspješno dodana!", Toast.LENGTH_SHORT).show();
+
+         ///////
+            String title = "Viroviticom nevidljivim koracima";
+            String message = "U aplikaciju je dodan novi objekt na području grada Virovitice";
+            FCMSend.pushNotification(
+                    DodavanjeUstanoveActivity.this,
+                    "e6i3f6DXQnSArkJ-7HapWk:APA91bHnwtCS-qlLDpBV9simRqrA8flX5dicmE6FgwtHX5Zlu79PSdCIrl4pMG91JLNy9foHQPb9aCJIosRCjD99o6-gRR-Me0kxfeQFi3sRl55oSmD3cgp-CUfHjHvpNWNiKqVu6rEN",
+                    title,
+                    message);
+          /////
+            /*FirebaseMessaging.getInstance().subscribeToTopic("weather")
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            String msg = "Subscribed";
+                            if (!task.isSuccessful()) {
+                                msg = "Subscribe failed";
+                            }
+                            Log.d(TAG, msg);
+                            Toast.makeText(DodavanjeUstanoveActivity.this, msg, Toast.LENGTH_SHORT).show();
+                        }
+                    });*/////////////////
+            /*ComponentName componentName = new ComponentName(this, FCMSend.class);
+            getPackageManager().setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                    PackageManager.DONT_KILL_APP);*/
+
+            ////////////////////
+            Intent intent = new Intent(this, PodaciObjektaActivity.class);
                 intent.putExtra("naziv", nazivtxt.getText().toString());
                 intent.putExtra("adresa", adresatxt.getText().toString());
                 intent.putExtra("email", emailtxt.getText().toString());
@@ -316,6 +351,21 @@ public class DodavanjeUstanoveActivity extends AppCompatActivity {
                 intent.putExtra("slikaUlaza", imageUri.toString());
 
             startActivity(intent);
+
+           /* FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(new OnCompleteListener<String>() {
+                        @Override
+                        public void onComplete(@NonNull Task<String> task) {
+                            if (!task.isSuccessful()) {
+                                return;
+                            }
+
+                            String token = task.getResult();
+
+                            System.out.println("TOKEN " + token);
+                        }
+                    });*/
+
         }
     }
 }
