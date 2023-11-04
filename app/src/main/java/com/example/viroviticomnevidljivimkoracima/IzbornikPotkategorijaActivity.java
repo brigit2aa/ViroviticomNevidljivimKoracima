@@ -35,7 +35,7 @@ public class IzbornikPotkategorijaActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.menu_potkategorija);
         //Dohvat podatka. Ako imam više podataka koje prosljeđujem dohvatim si samo jedan objekt u Bundle.
-        String kategorija=getIntent().getExtras().getSerializable("idKategorije").toString();
+        String kategorija = getIntent().getExtras().getSerializable("idKategorije").toString();
         databaseReference = FirebaseDatabase.getInstance().getReference().child("potkategorija");
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
